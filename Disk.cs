@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
-
 	Rigidbody2D rb;
 	[SerializeField] Rigidbody2D hookPlace;
 	[SerializeField] private float _releaseTime = .15f;
@@ -97,6 +96,7 @@ public class Disk : MonoBehaviour
 		isPressed = true;
 		rb.isKinematic = true;
 	}
+	
 	void OnMouseUp()
 	{
 		isPressed = false;
