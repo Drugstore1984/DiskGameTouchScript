@@ -12,12 +12,13 @@ public class Disk : MonoBehaviour
 	public float MaxDragDistance => _maxDragDistance;
 	[SerializeField] GameObject nextDisk;
 	private bool isPressed = false, 
-				isTouched = false;
+			isTouched = false;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
+	
 	void FixedUpdate()
 	{
 		if (isPressed)
@@ -72,7 +73,6 @@ public class Disk : MonoBehaviour
 					StartCoroutine(Release());
 				}
 			}
-
 		}
 	}
 
@@ -80,10 +80,12 @@ public class Disk : MonoBehaviour
 	{
 		return hookPlace.position + (actionPosition - hookPlacePosition).normalized * maxDragDistance;
 	}
+	
 	private bool isPhaseEnded(Touch touch)
 	{
 		return touch.phase == TouchPhase.Ended;
 	}
+	
 	private bool isPhaseBegan(Touch touch)
 	{
 		return touch.phase == TouchPhase.Began;
@@ -116,20 +118,5 @@ public class Disk : MonoBehaviour
 		{
 			nextDisk.SetActive(true);
 		}
-
 	}
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		if(collision.gameObject.tag.Equals("DeathLinePlayer"))
-		{
-			if (nextDisk != null)
-			{
-				nextDisk.SetActive(true);
-			}
-			gameObject.SetActive(false);
-
-		}
-
-	}
-
 }
