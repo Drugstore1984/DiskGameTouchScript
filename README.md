@@ -11,5 +11,5 @@ Put on gameobject Spring Joint 2D (Connected Rigidbody: HookPlace gameobject, Di
 Put this script on the Disk gameobject (Hook Place: HookPlace gameobject, Release Time: 0.15, Max Drag Distance:2, Next Disk: duplicate Disk gameobject if necessary)
 Start scene drag Disk and release to throw.
 
-Made with Unity 2020.1.0a25.3172
+Made with Unity 2020.1.0a25.3171
 
